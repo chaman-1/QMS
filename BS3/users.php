@@ -29,7 +29,6 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
-
 </head>
 <body>
 
@@ -41,62 +40,75 @@
 
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
-                    Creative Tim
+                <a href="#" class="simple-text">
+                    Question Paper Mgmt (Admin Panel)
                 </a>
             </div>
 
             <ul class="nav">
-                <li>
-                    <a href="dashboard.html">
+                <li class="active">
+                    <a href="dashboard.php">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
-                    <a href="user.html">
+                    <a href="adminprofile.php">
                         <i class="pe-7s-user"></i>
-                        <p>User Profile</p>
+                        <p>Admin Profile</p>
                     </a>
                 </li>
                 <li>
-                    <a href="table.html">
+                    <a href="users.php">
                         <i class="pe-7s-note2"></i>
-                        <p>Table List</p>
+                        <!-- <p>Table List</p> -->
+                        <p>Users</p>
                     </a>
                 </li>
-                <li>
-                    <a href="typography.html">
+                <!-- <li>
+                    <a href="typography.php">
                         <i class="pe-7s-news-paper"></i>
                         <p>Typography</p>
                     </a>
+                </li> -->
+                <li>
+                    <a href="log.php">
+                        <i class="pe-7s-graph2"></i>
+                        <p>Log</p>
+                    </a>
                 </li>
                 <li>
-                    <a href="icons.html">
+                    <a href="access.php">
+                        <i class="pe-7s-timer"></i>
+                        <p>Access Policy</p>
+                    </a>
+                </li>
+                <!-- <li>
+                    <a href="icons.php">
                         <i class="pe-7s-science"></i>
                         <p>Icons</p>
                     </a>
-                </li>
-                <li>
-                    <a href="maps.html">
+                </li> -->
+                <!-- <li>
+                    <a href="maps.php">
                         <i class="pe-7s-map-marker"></i>
                         <p>Maps</p>
                     </a>
-                </li>
-                <li class="active">
-                    <a href="notifications.html">
+                </li> -->
+                <li>
+                    <a href="notifications.php">
                         <i class="pe-7s-bell"></i>
                         <p>Notifications</p>
                     </a>
                 </li>
-				<li class="active-pro">
-                    <a href="upgrade.html">
+                <!-- <li class="active-pro">
+                    <a href="upgrade.php">
                         <i class="pe-7s-rocket"></i>
                         <p>Upgrade to PRO</p>
                     </a>
-                </li>
+                </li> -->
             </ul>
-    	</div>
+        </div>
     </div>
 
     <div class="main-panel">
@@ -109,7 +121,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Notifications</a>
+                    <a class="navbar-brand" href="#">Table List</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-left">
@@ -180,95 +192,74 @@
             </div>
         </nav>
 
-
         <div class="content">
             <div class="container-fluid">
-                <div class="card">
-                    <div class="header">
-                        <h4 class="title">Notifications</h4>
-                        <p class="category">Handcrafted by our friend <a target="_blank" href="https://github.com/mouse0270">Robert McIntosh</a>. Please checkout the <a href="http://bootstrap-notify.remabledesigns.com/" target="_blank">full documentation.</a></p>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">List of all users</h4>
+                                <p class="category">Here is a subtitle for this table</p>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table class="table table-hover table-striped">
+                                    <thead>
+                                        <th>ID</th>
+                                    	<th>Name</th>
+                                    	<!-- <th>Salary</th>
+                                    	<th>Country</th>
+                                    	<th>City</th> -->
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        	<td>1</td>
+                                        	<td>Dakota Rice</td>
+                                        	<!-- <td>$36,738</td>
+                                        	<td>Niger</td>
+                                        	<td>Oud-Turnhout</td> -->
+                                        </tr>
+                                        <tr>
+                                        	<td>2</td>
+                                        	<td>Minerva Hooper</td>
+                                        	<!-- <td>$23,789</td>
+                                        	<td>Curaçao</td>
+                                        	<td>Sinaai-Waas</td> -->
+                                        </tr>
+                                        <tr>
+                                        	<td>3</td>
+                                        	<td>Sage Rodriguez</td>
+                                        	<!-- <td>$56,142</td>
+                                        	<td>Netherlands</td>
+                                        	<td>Baileux</td> -->
+                                        </tr>
+                                        <tr>
+                                        	<td>4</td>
+                                        	<td>Philip Chaney</td>
+                                        	<!-- <td>$38,735</td>
+                                        	<td>Korea, South</td>
+                                        	<td>Overland Park</td> -->
+                                        </tr>
+                                        <tr>
+                                        	<td>5</td>
+                                        	<td>Doris Greene</td>
+                                        	<!-- <td>$63,542</td>
+                                        	<td>Malawi</td>
+                                        	<td>Feldkirchen in Kärnten</td> -->
+                                        </tr>
+                                        <tr>
+                                        	<td>6</td>
+                                        	<td>Mason Porter</td>
+                                        	<!-- <td>$78,615</td>
+                                        	<td>Chile</td>
+                                        	<td>Gloucester</td> -->
+                                        </tr>
+                                    </tbody>
+                                </table>
 
-                    </div>
-                    <div class="content">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h5>Notifications Style</h5>
-                                <div class="alert alert-info">
-                                    <span>This is a plain notification</span>
-                                </div>
-                                <div class="alert alert-info">
-                                    <button type="button" aria-hidden="true" class="close">×</button>
-                                    <span>This is a notification with close button.</span>
-                                </div>
-                                <div class="alert alert-info alert-with-icon" data-notify="container">
-                                    <button type="button" aria-hidden="true" class="close">×</button>
-                                    <span data-notify="icon" class="pe-7s-bell"></span>
-                                    <span data-notify="message">This is a notification with close button and icon.</span>
-                                </div>
-                                <div class="alert alert-info alert-with-icon" data-notify="container">
-                                    <button type="button" aria-hidden="true" class="close">×</button>
-                                    <span data-notify="icon" class="pe-7s-bell"></span>
-                                    <span data-notify="message">This is a notification with close button and icon and have many lines. You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style.</span>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <h5>Notification states</h5>
-                                <div class="alert alert-info">
-                                    <button type="button" aria-hidden="true" class="close">×</button>
-                                    <span><b> Info - </b> This is a regular notification made with ".alert-info"</span>
-                                </div>
-                                <div class="alert alert-success">
-                                    <button type="button" aria-hidden="true" class="close">×</button>
-                                    <span><b> Success - </b> This is a regular notification made with ".alert-success"</span>
-                                </div>
-                                <div class="alert alert-warning">
-                                    <button type="button" aria-hidden="true" class="close">×</button>
-                                    <span><b> Warning - </b> This is a regular notification made with ".alert-warning"</span>
-                                </div>
-                                <div class="alert alert-danger">
-                                    <button type="button" aria-hidden="true" class="close">×</button>
-                                    <span><b> Danger - </b> This is a regular notification made with ".alert-danger"</span>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <br>
-                        <div class="places-buttons">
-                            <div class="row">
-                                <div class="col-md-6 col-md-offset-3 text-center">
-                                    <h5>Notifications Places
-                                        <p class="category">Click to view notifications</p>
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2 col-md-offset-3">
-                                    <button class="btn btn-default btn-block" onclick="demo.showNotification('top','left')">Top Left</button>
-                                </div>
-                                <div class="col-md-2">
-                                    <button class="btn btn-default btn-block" onclick="demo.showNotification('top','center')">Top Center</button>
-                                </div>
-                                <div class="col-md-2">
-                                    <button class="btn btn-default btn-block" onclick="demo.showNotification('top','right')">Top Right</button>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2 col-md-offset-3">
-                                    <button class="btn btn-default btn-block" onclick="demo.showNotification('bottom','left')">Bottom Left</button>
-                                </div>
-                                <div class="col-md-2">
-                                    <button class="btn btn-default btn-block" onclick="demo.showNotification('bottom','center')">Bottom Center</button>
-                                </div>
-                                <div class="col-md-2">
-                                    <button class="btn btn-default btn-block" onclick="demo.showNotification('bottom','right')">Bottom Right</button>
-                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
-
 
         <footer class="footer">
             <div class="container-fluid">
@@ -296,11 +287,10 @@
                         </li>
                     </ul>
                 </nav>
-                <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
-                </p>
+                
             </div>
         </footer>
+
 
     </div>
 </div>
@@ -308,7 +298,7 @@
 
 </body>
 
-        <!--   Core JS Files   -->
+    <!--   Core JS Files   -->
     <script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
 	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 
@@ -326,5 +316,6 @@
 
 	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 	<script src="assets/js/demo.js"></script>
+
 
 </html>

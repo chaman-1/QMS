@@ -40,75 +40,62 @@
 
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a href="#" class="simple-text">
-                    Question Paper Mgmt (Admin Panel)
+                <a href="http://www.creative-tim.com" class="simple-text">
+                    Creative Tim
                 </a>
             </div>
 
             <ul class="nav">
-                <li class="active">
-                    <a href="dashboard.html">
+                <li>
+                    <a href="dashboard.php">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
-                    <a href="adminprofile.html">
+                    <a href="user.php">
                         <i class="pe-7s-user"></i>
-                        <p>Admin Profile</p>
+                        <p>User Profile</p>
                     </a>
                 </li>
                 <li>
-                    <a href="users.html">
+                    <a href="table.php">
                         <i class="pe-7s-note2"></i>
-                        <!-- <p>Table List</p> -->
-                        <p>Users</p>
+                        <p>Table List</p>
                     </a>
                 </li>
-                <!-- <li>
-                    <a href="typography.html">
+                <li class="active">
+                    <a href="typography.php">
                         <i class="pe-7s-news-paper"></i>
                         <p>Typography</p>
                     </a>
-                </li> -->
-                <li>
-                    <a href="log.html">
-                        <i class="pe-7s-graph2"></i>
-                        <p>Log</p>
-                    </a>
                 </li>
                 <li>
-                    <a href="access.html">
-                        <i class="pe-7s-timer"></i>
-                        <p>Access Policy</p>
-                    </a>
-                </li>
-                <!-- <li>
-                    <a href="icons.html">
+                    <a href="icons.php">
                         <i class="pe-7s-science"></i>
                         <p>Icons</p>
                     </a>
-                </li> -->
-                <!-- <li>
-                    <a href="maps.html">
+                </li>
+                <li>
+                    <a href="maps.php">
                         <i class="pe-7s-map-marker"></i>
                         <p>Maps</p>
                     </a>
-                </li> -->
+                </li>
                 <li>
-                    <a href="notifications.html">
+                    <a href="notifications.php">
                         <i class="pe-7s-bell"></i>
                         <p>Notifications</p>
                     </a>
                 </li>
-                <!-- <li class="active-pro">
-                    <a href="upgrade.html">
+				<li class="active-pro">
+                    <a href="upgrade.php">
                         <i class="pe-7s-rocket"></i>
                         <p>Upgrade to PRO</p>
                     </a>
-                </li> -->
+                </li>
             </ul>
-        </div>
+    	</div>
     </div>
 
     <div class="main-panel">
@@ -121,7 +108,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">User</a>
+                    <a class="navbar-brand" href="#">Typography</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-left">
@@ -196,119 +183,80 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Edit Profile</h4>
+                                <h4 class="title">Light Bootstrap Table Heading</h4>
+                                <p class="category">Created using Roboto Font Family</p>
                             </div>
                             <div class="content">
-                                <form>
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <label>Company (disabled)</label>
-                                                <input type="text" class="form-control" disabled placeholder="Company" value="Creative Code Inc.">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label>Username</label>
-                                                <input type="text" class="form-control" placeholder="Username" value="michael23">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Email address</label>
-                                                <input type="email" class="form-control" placeholder="Email">
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>First Name</label>
-                                                <input type="text" class="form-control" placeholder="Company" value="Brijesh">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Last Name</label>
-                                                <input type="text" class="form-control" placeholder="Last Name" value="Patel">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Address</label>
-                                                <input type="text" class="form-control" placeholder="Home Address" value="Mannaguda Mangalore">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>City</label>
-                                                <input type="text" class="form-control" placeholder="City" value="Mangalore">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Country</label>
-                                                <input type="text" class="form-control" placeholder="Country" value="India">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Postal Code</label>
-                                                <input type="number" class="form-control" placeholder="ZIP Code" value="575003">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>About Me</label>
-                                                <textarea rows="5" class="form-control" placeholder="Here can be your description" value="Mike">Bored</textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>
-                                    <div class="clearfix"></div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-user">
-                            <div class="image">
-                                <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>
-                            </div>
-                            <div class="content">
-                                <div class="author">
-                                     <a href="#">
-                                    <img class="avatar border-gray" src="assets/img/faces/face-3.jpg" alt="..."/>
-
-                                      <h4 class="title">Mike Andrew<br />
-                                         <small>michael24</small>
-                                      </h4>
-                                    </a>
+                                <div class="typo-line">
+                                    <h1><p class="category">Header 1</p>Light Bootstrap Table Heading </h1>
                                 </div>
-                                <p class="description text-center"> "Lamborghini Mercy <br>
-                                                    Your chick she so thirsty <br>
-                                                    I'm in that two seat Lambo"
-                                </p>
-                            </div>
-                            <hr>
-                            <div class="text-center">
-                                <button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
-                                <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
-                                <button href="#" class="btn btn-simple"><i class="fa fa-google-plus-square"></i></button>
+
+                                    <div class="typo-line">
+                                    <h2><p class="category">Header 2</p>Light Bootstrap Table Heading</h2>
+                                </div>
+                                <div class="typo-line">
+                                    <h3><p class="category">Header 3</p>Light Bootstrap Table Heading</h3>
+                                </div>
+                                <div class="typo-line">
+                                    <h4><p class="category">Header 4</p>Light Bootstrap Table Heading</h4>
+                                </div>
+                                <div class="typo-line">
+                                    <h5><p class="category">Header 5</p>Light Bootstrap Table Heading</h5>
+                                </div>
+                                 <div class="typo-line">
+                                    <h6><p class="category">Header 6</p>Light Bootstrap Table Heading</h6>
+                                </div>
+                                <div class="typo-line">
+                                    <p><span class="category">Paragraph</span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
+                                </div>
+                                <div class="typo-line">
+                                    <p class="category">Quote</p>
+                                    <blockquote>
+                                     <p>
+                                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                                     </p>
+                                     <small>
+                                     Steve Jobs, CEO Apple
+                                     </small>
+                                    </blockquote>
+                                </div>
+
+                                <div class="typo-line">
+                                    <p class="category">Muted Text</p>
+                                    <p class="text-muted">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.
+                                    </p>
+                                </div>
+                                <div class="typo-line">
+                                    <!--
+                                     there are also "text-info", "text-success", "text-warning", "text-danger" clases for the text
+                                     -->
+                                    <p class="category">Coloured Text</p>
+                                    <p class="text-primary">
+                                        Text Primary - Light Bootstrap Table Heading and complex bootstrap dashboard you've ever seen on the internet.
+                                    </p>
+                                    <p class="text-info">
+                                        Text Info - Light Bootstrap Table Heading and complex bootstrap dashboard you've ever seen on the internet.
+                                    </p>
+                                    <p class="text-success">
+                                        Text Success - Light Bootstrap Table Heading and complex bootstrap dashboard you've ever seen on the internet.
+                                    </p>
+                                    <p class="text-warning">
+                                        Text Warning - Light Bootstrap Table Heading and complex bootstrap dashboard you've ever seen on the internet.
+                                    </p>
+                                    <p class="text-danger">
+                                        Text Danger - Light Bootstrap Table Heading and complex bootstrap dashboard you've ever seen on the internet.
+                                    </p>
+                                </div>
+
+                                <div class="typo-line">
+                                    <h2><p class="category">Small Tag</p>Header with small subtitle <br><small>".small" is a tag for the headers</small> </h2>
+                                </div>
+
 
                             </div>
                         </div>
@@ -317,7 +265,6 @@
                 </div>
             </div>
         </div>
-
 
         <footer class="footer">
             <div class="container-fluid">
@@ -345,8 +292,12 @@
                         </li>
                     </ul>
                 </nav>
+                <p class="copyright pull-right">
+                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                </p>
             </div>
         </footer>
+
 
     </div>
 </div>
@@ -354,7 +305,7 @@
 
 </body>
 
-    <!--   Core JS Files   -->
+        <!--   Core JS Files   -->
     <script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
 	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 

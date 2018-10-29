@@ -47,62 +47,62 @@
 
             <ul class="nav">
                 <li class="active">
-                    <a href="dashboard.html">
+                    <a href="dashboard.php">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
-                    <a href="adminprofile.html">
+                    <a href="adminprofile.php">
                         <i class="pe-7s-user"></i>
                         <p>Admin Profile</p>
                     </a>
                 </li>
                 <li>
-                    <a href="users.html">
+                    <a href="users.php">
                         <i class="pe-7s-note2"></i>
                         <!-- <p>Table List</p> -->
                         <p>Users</p>
                     </a>
                 </li>
                 <!-- <li>
-                    <a href="typography.html">
+                    <a href="typography.php">
                         <i class="pe-7s-news-paper"></i>
                         <p>Typography</p>
                     </a>
                 </li> -->
                 <li>
-                    <a href="log.html">
+                    <a href="log.php">
                         <i class="pe-7s-graph2"></i>
                         <p>Log</p>
                     </a>
                 </li>
                 <li>
-                    <a href="access.html">
+                    <a href="access.php">
                         <i class="pe-7s-timer"></i>
                         <p>Access Policy</p>
                     </a>
                 </li>
                 <!-- <li>
-                    <a href="icons.html">
+                    <a href="icons.php">
                         <i class="pe-7s-science"></i>
                         <p>Icons</p>
                     </a>
                 </li> -->
                 <!-- <li>
-                    <a href="maps.html">
+                    <a href="maps.php">
                         <i class="pe-7s-map-marker"></i>
                         <p>Maps</p>
                     </a>
                 </li> -->
                 <li>
-                    <a href="notifications.html">
+                    <a href="notifications.php">
                         <i class="pe-7s-bell"></i>
                         <p>Notifications</p>
                     </a>
                 </li>
                 <!-- <li class="active-pro">
-                    <a href="upgrade.html">
+                    <a href="upgrade.php">
                         <i class="pe-7s-rocket"></i>
                         <p>Upgrade to PRO</p>
                     </a>
