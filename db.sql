@@ -38,6 +38,24 @@ insert  into `faculty`(`index`,`fid`,`name`,`role`,`email`,`passwd`,`active`) va
 (1,'fa0021','chaman','admin','chamansullia@gmail.com','test',1),
 (2,'fa0022','test','user','test@test.com','test',1);
 
+
+/*Table structure for table `qpaper` */
+
+DROP TABLE IF EXISTS `qpaper`;
+
+CREATE TABLE `qpaper` (
+  `index` int(10) NOT NULL AUTO_INCREMENT,
+  `qid` varchar(10) NOT NULL,
+  `group` int(10) NOT NULL,
+  `fid` varchar(7) NOT NULL,
+  PRIMARY KEY (`qid`),
+  KEY `index` (`index`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `qpaper` */
+
+
+
 /*Table structure for table `log` */
 
 DROP TABLE IF EXISTS `log`;
@@ -55,20 +73,6 @@ CREATE TABLE `log` (
 
 /*Data for the table `log` */
 
-/*Table structure for table `qpaper` */
-
-DROP TABLE IF EXISTS `qpaper`;
-
-CREATE TABLE `qpaper` (
-  `index` int(10) NOT NULL AUTO_INCREMENT,
-  `qid` varchar(10) NOT NULL,
-  `group` int(10) NOT NULL,
-  `fid` varchar(7) NOT NULL,
-  PRIMARY KEY (`qid`),
-  KEY `index` (`index`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/*Data for the table `qpaper` */
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

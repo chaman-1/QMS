@@ -1,3 +1,6 @@
+<?php
+    require 'config.php';
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -35,9 +38,7 @@
 <div class="wrapper">
     <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg">
 
-    <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
-
-
+    
     	<div class="sidebar-wrapper">
             <div class="logo">
                 <a href="#" class="simple-text">
@@ -61,16 +62,9 @@
                 <li>
                     <a href="users.php">
                         <i class="pe-7s-note2"></i>
-                        <!-- <p>Table List</p> -->
                         <p>Users</p>
                     </a>
                 </li>
-                <!-- <li>
-                    <a href="typography.php">
-                        <i class="pe-7s-news-paper"></i>
-                        <p>Typography</p>
-                    </a>
-                </li> -->
                 <li>
                     <a href="log.php">
                         <i class="pe-7s-graph2"></i>
@@ -83,30 +77,12 @@
                         <p>Access Policy</p>
                     </a>
                 </li>
-                <!-- <li>
-                    <a href="icons.php">
-                        <i class="pe-7s-science"></i>
-                        <p>Icons</p>
-                    </a>
-                </li> -->
-                <!-- <li>
-                    <a href="maps.php">
-                        <i class="pe-7s-map-marker"></i>
-                        <p>Maps</p>
-                    </a>
-                </li> -->
                 <li>
                     <a href="notifications.php">
                         <i class="pe-7s-bell"></i>
                         <p>Notifications</p>
                     </a>
                 </li>
-                <!-- <li class="active-pro">
-                    <a href="upgrade.php">
-                        <i class="pe-7s-rocket"></i>
-                        <p>Upgrade to PRO</p>
-                    </a>
-                </li> -->
             </ul>
         </div>
     </div>
@@ -192,6 +168,15 @@
             </div>
         </nav>
 
+<?php 
+    $query = "SELECT * from faculty";
+    $res = mysqli_query($conn, $query);
+    while($arr=mysqli_fetch_assoc($res))
+        $myarr[]=$arr;
+    
+?>
+
+
         <div class="content">
             <div class="container-fluid">
                     <div class="col-md-12">
@@ -203,55 +188,29 @@
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped">
                                     <thead>
+                                        <th>SL_no.</th>
                                         <th>ID</th>
                                     	<th>Name</th>
-                                    	<!-- <th>Salary</th>
-                                    	<th>Country</th>
-                                    	<th>City</th> -->
+                                        <th>Role</th>
+                                        <th>Email_ID</th>
+                                        <th>Status</th>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                        	<td>1</td>
-                                        	<td>Dakota Rice</td>
-                                        	<!-- <td>$36,738</td>
-                                        	<td>Niger</td>
-                                        	<td>Oud-Turnhout</td> -->
-                                        </tr>
-                                        <tr>
-                                        	<td>2</td>
-                                        	<td>Minerva Hooper</td>
-                                        	<!-- <td>$23,789</td>
-                                        	<td>Curaçao</td>
-                                        	<td>Sinaai-Waas</td> -->
-                                        </tr>
-                                        <tr>
-                                        	<td>3</td>
-                                        	<td>Sage Rodriguez</td>
-                                        	<!-- <td>$56,142</td>
-                                        	<td>Netherlands</td>
-                                        	<td>Baileux</td> -->
-                                        </tr>
-                                        <tr>
-                                        	<td>4</td>
-                                        	<td>Philip Chaney</td>
-                                        	<!-- <td>$38,735</td>
-                                        	<td>Korea, South</td>
-                                        	<td>Overland Park</td> -->
-                                        </tr>
-                                        <tr>
-                                        	<td>5</td>
-                                        	<td>Doris Greene</td>
-                                        	<!-- <td>$63,542</td>
-                                        	<td>Malawi</td>
-                                        	<td>Feldkirchen in Kärnten</td> -->
-                                        </tr>
-                                        <tr>
-                                        	<td>6</td>
-                                        	<td>Mason Porter</td>
-                                        	<!-- <td>$78,615</td>
-                                        	<td>Chile</td>
-                                        	<td>Gloucester</td> -->
-                                        </tr>
+                                        <?php foreach($myarr as $arr):?>
+                                            <tr>
+                                                <td><?php echo $arr['index']; ?></td>
+                                                <td><?php echo $arr['fid']; ?></td>
+                                                <td><?php echo $arr['name']; ?></td>
+                                                <td><?php echo $arr['role']; ?></td>
+                                                <td><?php echo $arr['email']; ?></td>
+                                                <td><?php if($arr['active'] == 1)
+                                                        echo "Active";
+                                                        else
+                                                        echo "Disabled";?>
+                                                </td>
+                                                
+                                            </tr>
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
 
