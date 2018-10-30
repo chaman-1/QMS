@@ -167,7 +167,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                            <a href="">
-                               <p>Account</p>
+                            Welcome, <?php echo $login_session; ?>
                             </a>
                         </li>
                         <li class="dropdown">

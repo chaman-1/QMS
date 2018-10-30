@@ -1,3 +1,6 @@
+<?php
+    include('session.php');
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -148,7 +151,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                            <a href="">
-                               <p>Account</p>
+                           Welcome, <?php echo $login_session; ?>
                             </a>
                         </li>
                         <li class="dropdown">

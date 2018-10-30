@@ -1,5 +1,15 @@
 <?php
-    require 'config.php';
+    include('session.php');
+    $c=0;
+    $er_m = "";
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        $fid = mysqli_real_escape_string($conn,$_POST['fid']);
+        $name = mysqli_real_escape_string($conn,$_POST['name']);
+        
+        $sql = "DELETE FROM `faculty` WHERE `fid`='$fid' && `name`='$name' && `role` <> 'admin'";
+        $result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+        
+    }
 ?>
 <!doctype html>
 <html lang="en">
@@ -136,7 +146,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                            <a href="">
-                               <p>Account</p>
+                           Welcome, <?php echo $login_session; ?>
                             </a>
                         </li>
                         <li class="dropdown">
@@ -179,6 +189,47 @@
 
         <div class="content">
             <div class="container-fluid">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Disable an user</h4>
+                                <p class="category">Enter id and name to disable that user. </p> 
+                                
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table class="table table-hover table-striped">
+                                    <form method="POST" action="">
+                                        <div class="row">
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>FID</label>
+                                                    <input type="text" name="fid" id="fid" class="form-control" placeholder="Fid goes here" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Name</label>
+                                                    <input type="text" name="name" id="name" class="form-control" placeholder="Name goes here" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1"></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-8"></div>
+                                            <div class="col-md-4">
+                                            <button type="submit" class="btn btn-info btn-fill">Submit</button>
+                                            </div>
+                                            <!-- <div class="col-md-2"></div> -->
+                                            
+                                        
+                                        </div>
+                                        
+                                    </form>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
