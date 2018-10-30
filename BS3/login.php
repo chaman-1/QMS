@@ -1,3 +1,23 @@
+<?php 
+    include("config.php");
+    session_start();
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        $myusername = mysqli_real_escape_string($conn,$_POST['username']);
+        $mypassword = mysqli_real_escape_string($conn,$_POST['password']); 
+        $sql = "SELECT `fid` FROM faculty WHERE `name` = '$myusername' and `passwd` = '$mypassword'";
+        $result = mysqli_query($conn,$sql);
+        $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+        
+        $count = mysqli_num_rows($result);
+        if($count == 1) {
+            $_SESSION['login_user'] = $myusername;
+            
+            header("location: dashboard.php");
+         }else {
+            echo("Your Login Name or Password is invalid");
+         }
+    }
+?>
 <head>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -25,7 +45,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-12">
-                                <form id="login-form" action="dashboard.php" method="post" role="form" style="display: block;">
+                                <form id="login-form" action="" method="post" role="form" style="display: block;">
                                     <div class="form-group">
                                         <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
                                     </div>
