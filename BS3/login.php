@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
 <script type="text/javascript" src="assets/js/custom.js"></script>
 </head>
+<body style="background: linear-gradient(#9368e9a1, #9368e9b0), url(../assets/img/full-screen-image-3.jpg);">
 <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
@@ -80,3 +81,4 @@
             </div>
         </div>
     </div>
+</body>
