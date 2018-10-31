@@ -2,13 +2,22 @@
     include('session.php');
     $c=0;
     $er_m = "";
-    if($_SERVER["REQUEST_METHOD"] == "POST") {
+    if(isset($_POST['disable'])) 
+    {
         $fid = mysqli_real_escape_string($conn,$_POST['fid']);
         $name = mysqli_real_escape_string($conn,$_POST['name']);
         
-        $sql = "DELETE FROM `faculty` WHERE `fid`='$fid' && `name`='$name' && `role` <> 'admin'";
+        $sql = "UPDATE `faculty` SET `active` = 0 WHERE `fid`='$fid' && `name`='$name' && `role` <> 'admin'";
         $result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
         
+    }
+    else if(isset($_POST['enable']))
+    {
+        $fid = mysqli_real_escape_string($conn,$_POST['fid']);
+        $name = mysqli_real_escape_string($conn,$_POST['name']);
+        
+        $sql = "UPDATE `faculty` SET `active` = 1 WHERE `fid`='$fid' && `name`='$name'";
+        $result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
     }
 ?>
 <!doctype html>
@@ -218,7 +227,48 @@
                                         <div class="row">
                                             <div class="col-md-8"></div>
                                             <div class="col-md-4">
-                                            <button type="submit" class="btn btn-info btn-fill">Submit</button>
+                                            <button type="submit" name="disable" class="btn btn-info btn-fill">Submit</button>
+                                            </div>
+                                            <!-- <div class="col-md-2"></div> -->
+                                            
+                                        
+                                        </div>
+                                        
+                                    </form>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Enable an user</h4>
+                                <p class="category">Enter id and name to enable that user. </p> 
+                                
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table class="table table-hover table-striped">
+                                    <form method="POST" action="">
+                                        <div class="row">
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>FID</label>
+                                                    <input type="text" name="fid" id="fid" class="form-control" placeholder="Fid goes here" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Name</label>
+                                                    <input type="text" name="name" id="name" class="form-control" placeholder="Name goes here" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1"></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-8"></div>
+                                            <div class="col-md-4">
+                                            <button type="submit" name="enable" class="btn btn-info btn-fill">Submit</button>
                                             </div>
                                             <!-- <div class="col-md-2"></div> -->
                                             

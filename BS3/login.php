@@ -1,6 +1,7 @@
 <?php 
     include("config.php");
     session_start();
+    $count=0;
     if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login-submit'])) {
         $myusername = mysqli_real_escape_string($conn,$_POST['username']);
         $mypassword = mysqli_real_escape_string($conn,$_POST['password']); 
@@ -30,21 +31,23 @@
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $password = mysqli_real_escape_string($conn, $_POST['password']);
         $sql = "SELECT `email` from `faculty` where `email`='$email'";
-        $result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
-        
-        $sql = "INSERT INTO `faculty`(`fid`, `name`, `role`, `email`, `passwd`, `active`) VALUES('$fid', '$name', 'user', '$email', '$password', 0)";
-        $result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
-        
-        // if ($conn->query($sql) === TRUE) {
-        // } else {
-        //     echo "Error: " . $sql . "<br>" . $conn->error;
-        // }
+        $result = mysqli_query($conn,$sql);
+        $count = mysqli_num_rows($result);
+        if($count == 1){
+            echo("User already exists");
+        }
+        else{
+            $sql = "INSERT INTO `faculty`(`fid`, `name`, `role`, `email`, `passwd`, `active`) VALUES('$fid', '$name', 'user', '$email', '$password', 0)";
+            $result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+        }
     }
 ?>
 <head>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
 <script type="text/javascript" src="assets/js/custom.js"></script>
@@ -110,12 +113,15 @@
                                         <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                                        <input type="password" name="confirm-password" id="confirm-password" onChange="checkPasswordMatch();" tabindex="2" class="form-control" placeholder="Confirm Password">
                                     </div>
+                                    <div class="form-group">
+                                    <!-- <div class="registrationFormAlert" id="divCheckPasswordMatch">
+                                    </div> -->
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-sm-6 col-sm-offset-3">
-                                                <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                                                <button type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register">Register Now</button>
                                             </div>
                                         </div>
                                     </div>
@@ -127,4 +133,21 @@
             </div>
         </div>
     </div>
+    <script>
+        function checkPasswordMatch() {
+    var password = $("#password").val();
+    var confirmPassword = $("#confirm-password").val();
+
+    if (password != confirmPassword){
+        $("#divCheckPasswordMatch").html("Passwords do not match!");
+    }
+    else if(password == confirmPassword){
+        $("#divCheckPasswordMatch").html("Passwords match.");
+    }
+}
+
+$(document).ready(function () {
+   $("#password, #confirm-password").keyup(checkPasswordMatch);
+});
+        </script>
 </body>
