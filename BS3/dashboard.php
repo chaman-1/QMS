@@ -1,5 +1,8 @@
 <?php
     include('session.php');
+    if($_SESSION['role'] == 'user') {
+        header("Location:error.html");
+    }
 ?>
 <!doctype html>
 <html lang="en">
