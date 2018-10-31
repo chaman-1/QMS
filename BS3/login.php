@@ -4,15 +4,22 @@
     if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login-submit'])) {
         $myusername = mysqli_real_escape_string($conn,$_POST['username']);
         $mypassword = mysqli_real_escape_string($conn,$_POST['password']); 
-        $sql = "SELECT `fid` FROM faculty WHERE `name` = '$myusername' and `passwd` = '$mypassword'";
+        $sql = "SELECT `fid`, `role`, `active` FROM faculty WHERE `email` = '$myusername' and `passwd` = '$mypassword'";
         $result = mysqli_query($conn,$sql);
         $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
         
         $count = mysqli_num_rows($result);
-        if($count == 1) {
+        if($count == 1 && $row['active'] == 1) {
             $_SESSION['login_user'] = $myusername;
-            
-            header("location: dashboard.php");
+            $_SESSION['role'] = $row['role'];
+            if($row['role'] == 'user') {
+                header("location: myhome.php");
+            } else if (($row['role'] == 'admin')) {
+                header("location: dashboard.php");
+            } else {
+                header("location: login.php");
+                echo("Invalid User Category");
+            }
          }else {
             echo("Your Login Name or Password is invalid");
          }
