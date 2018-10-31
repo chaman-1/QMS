@@ -1,7 +1,7 @@
 <?php 
     include("config.php");
     session_start();
-    if($_SERVER["REQUEST_METHOD"] == "POST") {
+    if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login-submit'])) {
         $myusername = mysqli_real_escape_string($conn,$_POST['username']);
         $mypassword = mysqli_real_escape_string($conn,$_POST['password']); 
         $sql = "SELECT `fid` FROM faculty WHERE `name` = '$myusername' and `passwd` = '$mypassword'";
@@ -16,6 +16,22 @@
          }else {
             echo("Your Login Name or Password is invalid");
          }
+    }
+    else if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register-submit'])){
+        $fid = mysqli_real_escape_string($conn, $_POST['fid']);
+        $name = mysqli_real_escape_string($conn, $_POST['name']);
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $password = mysqli_real_escape_string($conn, $_POST['password']);
+        $sql = "SELECT `email` from `faculty` where `email`='$email'";
+        $result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+        
+        $sql = "INSERT INTO `faculty`(`fid`, `name`, `role`, `email`, `passwd`, `active`) VALUES('$fid', '$name', 'user', '$email', '$password', 0)";
+        $result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+        
+        // if ($conn->query($sql) === TRUE) {
+        // } else {
+        //     echo "Error: " . $sql . "<br>" . $conn->error;
+        // }
     }
 ?>
 <head>
@@ -67,15 +83,18 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="text-center">
-                                                    <a href="https://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                                    <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </form>
-                                <form id="register-form" action="dashboard.php" method="post" role="form" style="display: none;">
+                                <form id="register-form" action="" method="post" role="form" style="display: none;">
                                     <div class="form-group">
-                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                        <input type="text" name="fid" id="fid" tabindex="1" class="form-control" placeholder="Faculty ID" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Your Name" value="">
                                     </div>
                                     <div class="form-group">
                                         <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
