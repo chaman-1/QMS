@@ -12,6 +12,7 @@
         if($count == 1 && $row['active'] == 1) {
             $_SESSION['login_user'] = $myusername;
             $_SESSION['role'] = $row['role'];
+            $_SESSION['fid'] = $row['fid'];
             if($row['role'] == 'user') {
                 header("location: myhome.php");
             } else if (($row['role'] == 'admin')) {

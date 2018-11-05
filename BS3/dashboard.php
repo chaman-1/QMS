@@ -1,8 +1,14 @@
 <?php
+    include("config.php");
     include('session.php');
-    if($_SESSION['role'] == 'user') {
+    if($_SESSION['role'] != 'admin') {
         header("Location:error.html");
     }
+    $datee = date("Y-m-d h:i:sa");
+    $fid = $_SESSION['fid'];
+    $addr = $_SERVER['REMOTE_ADDR'];
+    $str = "Insert into `log`(`fid`,`ip`,`time`) values('$fid', '$addr', '$datee');";
+    $result = mysqli_query($conn,$str);
 ?>
 <!doctype html>
 <html lang="en">
